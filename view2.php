@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
@@ -34,7 +34,8 @@ if (isset($_GET["peli"])) {
         $peliis[] = array('nombre' => $nombre, 'img' => $img, 'activo' => $activo, 'idPelicula' => $idPelicula,);
 
         $jsonn_string = json_encode($peliis);
-        echo  $jsonn_string;
+        echo "<div style = 'background: #24303c; color:white; text-align: center;'>$jsonn_string; </div>";
+        unset($peliis);
     } else {
         echo "No se encontro una pelicula con ese id";
     }

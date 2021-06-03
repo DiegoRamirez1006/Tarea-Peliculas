@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
@@ -34,7 +34,8 @@ if (isset($_GET)) {
 
         $json_string = json_encode($pelis);
         if ($json_string > 0) {
-            echo $json_string;
+            echo "<div style = 'background: #24303c; color:white; text-align: center;'>$json_string</div>";
+            unset($pelis);
         } else {
             echo 'No hay ninguna pelicula en el sistema.';
         }
