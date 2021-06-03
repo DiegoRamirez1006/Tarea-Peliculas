@@ -44,8 +44,8 @@ CREATE TABLE `peliculas` (
 
 INSERT INTO `peliculas` (`nombre`, `img`, `activo`, `idPelicula`) VALUES
 ('batman', 'https://es.web.img2.acsta.net/medias/nmedia/18/67/07/47/20134039.gif', 1, 1),
-('Superman', 'https://i.pinimg.com/originals/e3/43/f5/e343f597c79e5c55d1cdd80c634017ca.jpg', 1, 7),
-('Flash', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVFBcVFBUXGBcaGxsbGxsaGxsaGxoaGxoaHRsXHhsbICwkGx4pIhsbJTYmKS4wMzMzGiI5PjkyPSwyMzABCwsLEA4QHhISHjIpJCkyMjI7MjIyMjQyNDIyMjIyMjQyMjIyMjIyMjIyM', 1, 8);
+('Superman', 'https://i.pinimg.com/originals/e3/43/f5/e343f597c79e5c55d1cdd80c634017ca.jpg', 1, 2),
+('Flash', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVFBcVFBUXGBcaGxsbGxsaGxsaGxoaGxoaHRsXHhsbICwkGx4pIhsbJTYmKS4wMzMzGiI5PjkyPSwyMzABCwsLEA4QHhISHjIpJCkyMjI7MjIyMjQyNDIyMjIyMjQyMjIyMjIyMjIyM', 1, 3);
 
 --
 -- Índices para tablas volcadas
