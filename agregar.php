@@ -33,8 +33,7 @@ $img = $_POST["img"];
 $insertar = "INSERT INTO peliculas(nombre, img) VALUES ('$name', '$img')";
 $resultado = mysqli_query($conn, $insertar);
 
-// $emailContent = array();
-// $emailContent[] = array('Nombre' => $name, 'img' => $img);
+
 
 
 $mail = new PHPMailer(true);
@@ -51,29 +50,21 @@ try {
 
     //Recipients
     $mail->setFrom('phpmailerprueba4@gmail.com', 'LucasMailer');
-    $mail->addAddress('phpmailerprueba4@gmail.com'/*, 'Lucas'*/);     //Add a recipient
-    /* $mail->addAddress('ellen@example.com');               //Name is optional
-        $mail->addReplyTo('info@example.com', 'Information');
-        $mail->addCC('cc@example.com');
-        $mail->addBCC('bcc@example.com');*/
+    $mail->addAddress('phpmailerprueba4@gmail.com', "");     
 
-    //Attachments
-    /* $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-        $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name*/
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Prueba peliculas';
+    $mail->isHTML(true);                                  
+    $mail->Subject = 'Info pelicula';
     $mail->Body    .=  "Pelicula: ";
     $mail->Body    .=  $name;
-    $mail->Body    .= " ";
+    $mail->Body    .= " | ";
     $mail->Body    .=  "Imagen: ";
     $mail->Body    .=  $img;
 
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'Correo enviado exitosamente.';
 } catch (Exception $e) {
-    echo "";
+    echo "Ha ocurrido un error.", $mail->ErrorInfo;
 }
 ?>
