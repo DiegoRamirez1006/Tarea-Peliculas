@@ -24,7 +24,6 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
-include('view2.php');
 include('DB.php');
 include('peliculas.php');
 
@@ -39,7 +38,7 @@ $resultado = mysqli_query($conn, $insertar);
 $mail = new PHPMailer(true);
 try {
     //Server settings
-    $mail->SMTPDebug = 2;                      //Enable verbose debug output
+    $mail->SMTPDebug = 0;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -49,10 +48,11 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('phpmailerprueba4@gmail.com', 'LucasMailer');
-    $mail->addAddress('phpmailerprueba4@gmail.com', "");     
+    $mail->setFrom('phpmailerprueba4@gmail.com', 'Lucas, Diego y Jona');
+    $mail->addAddress('rodrigoalbano@anima.edu.uy', "Rodrigo Albano");     
 
 
+    
     $mail->isHTML(true);                                  
     $mail->Subject = 'Info pelicula';
     $mail->Body    .=  "Pelicula: ";
@@ -63,7 +63,11 @@ try {
 
 
     $mail->send();
-    echo 'Correo enviado exitosamente.';
+    echo'<script type="text/javascript">
+    alert("Correo enviado exitosamente");
+    window.location.href="peliculas.php";
+    </script>';
+
 } catch (Exception $e) {
     echo "Ha ocurrido un error.", $mail->ErrorInfo;
 }
