@@ -13,7 +13,7 @@
 
 <body>
     <header id="main-header">
-        <a id="logo-header" href="#">
+        <a id="logo-header" onclick="myOcultar()" href="#">
             <span class="site-name">Peliculas</span>
         </a>
         <nav>
@@ -62,6 +62,12 @@
         document.getElementById('form-agendaa').style.display = "none";
         document.getElementById('form-agendaaa').style.display = "none";
         document.getElementById('form-agendaaaa').style.display = "block";
+    }
+
+    function myOcultar(){
+        document.getElementById('form-agendaa').style.display = "none";
+        document.getElementById('form-agendaaa').style.display = "none";
+        document.getElementById('form-agendaaaa').style.display = "none";
     }
 </script>
 
